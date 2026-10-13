@@ -1,6 +1,8 @@
-# Eu amo você ♡
+# Eu amo você, Raissa ♡
 
-Uma página romântica adaptada para celular, com fontes elegantes, coração animado, carta interativa e botão para compartilhar.
+Uma página romântica adaptada para celular, com fontes elegantes e um botão em forma de coração. Cada toque solta um coração que sobe pela tela.
+
+Dedicatória: feito por SanSan com muito amor para a Minha Princesa.
 
 ## Publicar no GitHub Pages
 
