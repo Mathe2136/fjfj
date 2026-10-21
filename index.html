@@ -1,46 +1,107 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#4b1125"><meta name="description" content="Uma declaração de SanSan para Raissa, com muito amor.">
-<title>Eu amo você, Raissa ♡</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-:root{color-scheme:dark;--cream:#fff2e4;--rose:#e7a8b7}*{box-sizing:border-box}body{margin:0;background:#4b1125;color:var(--cream);font-family:'DM Sans',sans-serif}body:before{content:'';position:fixed;inset:0;pointer-events:none;background:radial-gradient(ellipse at 75% 35%,#95455255,transparent 55%),radial-gradient(ellipse at 10% 85%,#270c1e99,transparent 55%)}main{position:relative;min-height:100svh;display:flex;flex-direction:column;align-items:center;padding:30px 24px 22px;overflow:hidden}.top{width:100%;max-width:1100px;display:flex;justify-content:space-between;align-items:center;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#e9b9c4}.top span:last-child{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;letter-spacing:0}.hero{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;text-align:center;padding:52px 0 35px}.eyebrow{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--rose);margin:0 0 24px}.heart{width:62px;height:65px;margin-bottom:20px;filter:drop-shadow(0 4px 18px #e89aaa40);animation:beat 4s ease-in-out infinite}.heart path{fill:none;stroke:#e7a8b7;stroke-width:1.2}h1{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(64px,11vw,142px);line-height:.85;font-weight:400;letter-spacing:-3px;margin:0}h1 span{display:block}h1 .love{font-style:italic;color:#e7a8b7;margin:10px 0 16px}.subtitle{max-width:290px;font-family:'Cormorant Garamond',Georgia,serif;font-size:22px;line-height:1.45;color:#efcbd0;margin:28px 0}button:focus-visible{outline:2px solid #fff2e4;outline-offset:5px}.footer{width:100%;max-width:1100px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid #e7a8b726;padding-top:18px;font-size:10px;letter-spacing:1px;color:#d59eac}.ornament{position:absolute;width:340px;height:480px;border:1px solid #e7a8b71f;border-radius:50%;transform:rotate(-30deg);left:-260px;top:25%;pointer-events:none}.ornament.right{left:auto;right:-270px;top:15%;transform:rotate(30deg)}h1 .name{display:block;font-size:.65em;letter-spacing:2px;color:var(--rose);margin-top:28px;font-style:italic}.heart-button{width:76px;height:76px;padding:12px;border:1px solid #e7a8b755;border-radius:50%;background:#e7a8b70a;color:var(--rose);cursor:pointer;touch-action:manipulation;transition:transform .2s,background .2s;position:relative;z-index:2;flex-shrink:0}.heart-button:hover{background:#e7a8b719}.heart-button:active{transform:scale(.9)}.heart-button svg{display:block;width:100%;height:100%;filter:drop-shadow(0 3px 12px #e7a8b750)}.heart-button path{fill:currentColor}.heart-hint{font-size:11px;letter-spacing:.4px;color:#e9b9c4;margin:14px 0 0}.footer{justify-content:center;text-align:center;font-family:'Cormorant Garamond',Georgia,serif;font-size:18px;line-height:1.5;letter-spacing:0}.floating-heart{position:fixed;width:36px;height:36px;z-index:10;pointer-events:none;color:#f6b8cc;filter:drop-shadow(0 0 10px #f6b8cc66);animation:rise 2.6s ease-out forwards}.floating-heart svg{width:100%;height:100%;fill:currentColor}@keyframes rise{0%{opacity:1;transform:translate(-50%,-50%) scale(.65)}15%{opacity:1;transform:translate(-50%,-70%) scale(1)}100%{opacity:0;transform:translate(calc(-50% + var(--drift)),var(--rise)) scale(1.3)}}@keyframes fade-heart{0%,65%{opacity:1}100%{opacity:0}}@keyframes beat{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}@keyframes float{from{opacity:.9;transform:translateY(0) rotate(0)}to{opacity:0;transform:translateY(-170px) rotate(25deg)}}@media(min-width:700px){h1 span{display:inline}h1 .love{margin:0 16px}.hero{padding:60px 0}.subtitle{max-width:400px}.heart{margin-bottom:36px}main{padding:35px 50px 24px}.eyebrow{margin-bottom:36px}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}.floating-heart{animation:fade-heart 1.5s ease-out forwards!important;transform:translate(-50%,-50%)}}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6eee5">
+  <meta name="description" content="Eu amo você, Raissa. Um pequeno universo feito por SanSan, com muito amor para a Minha Princesa.">
+  <meta property="og:title" content="Para Raissa, com amor">
+  <meta property="og:description" content="Tem um pedacinho de nós guardado aqui. De SanSan, para a Minha Princesa.">
+  <title>Eu amo você, Raissa — de SanSan</title>
+  <link rel="icon" href="assets/heart.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="vendor/gsap.min.js"></script>
+  <script defer src="vendor/ScrollTrigger.min.js"></script>
+  <script defer src="app.js"></script>
 </head>
 <body>
-<main>
-<header class="top"><span>Uma carta de amor</span><span>para você, sempre.</span></header>
-<div class="ornament" aria-hidden="true"></div><div class="ornament right" aria-hidden="true"></div>
-<section class="hero" aria-labelledby="declaration">
-<p class="eyebrow">Entre todas as palavras...</p>
-<svg class="heart" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 54S5 38 5 21C5 4 27 4 32 19C37 4 59 4 59 21C59 38 32 54 32 54Z"/></svg>
-<h1 id="declaration"><span>EU</span> <span class="love">AMO</span> <span>VOCÊ</span> <span class="name">RAISSA</span></h1>
-<p class="subtitle">Três palavras. Um mundo inteiro<br>de sentimento.</p>
-<button class="heart-button" id="send-heart" aria-label="Soltar um coração para Raissa"><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 54S5 38 5 21C5 4 27 4 32 19C37 4 59 4 59 21C59 38 32 54 32 54Z"/></svg></button>
-<p class="heart-hint">Toque no coração e veja o amor subir ♡</p>
-</section>
+  <a class="skip-link" href="#inicio">Pular para a declaração</a>
+  <div class="reading-progress" aria-hidden="true"></div>
+  <svg class="svg-library" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <symbol id="heart" viewBox="0 0 64 64"><path d="M32 55S5 38 5 21C5 5 26 3 32 18C38 3 59 5 59 21C59 38 32 55 32 55Z"/></symbol>
+      <symbol id="sparkle" viewBox="0 0 24 24"><path d="M12 0C13 9 15 11 24 12C15 13 13 15 12 24C11 15 9 13 0 12C9 11 11 9 12 0Z"/></symbol>
+    </defs>
+  </svg>
+  <header class="header">
+    <a class="monogram" href="#inicio" aria-label="SanSan e Raissa, início">S<span>&</span>R<span class="monogram-dot">.</span></a>
+    <nav aria-label="Navegação principal"><a href="#nos">Nós dois</a><a href="#coracao">Meu coração <span aria-hidden="true">↗</span></a></nav>
+  </header>
+  <main>
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <div class="hero-orbit orbit-one" aria-hidden="true"></div><div class="hero-orbit orbit-two" aria-hidden="true"></div>
+      <div class="pearl pearl-one" aria-hidden="true"></div><div class="pearl pearl-two" aria-hidden="true"></div><div class="pearl pearl-three" aria-hidden="true"></div>
+      <div class="hero-content">
+        <p class="eyebrow hero-enter">UMA PEQUENA DECLARAÇÃO. UM AMOR IMENSO.</p>
+        <h1 id="hero-title"><span class="title-line">Eu amo você,</span><span class="title-line name">Raissa<span class="title-period">.</span></span></h1>
+        <p class="hero-description hero-enter">Se o amor tivesse um lugar,<br>o meu seria ao seu lado.</p>
+        <div class="hero-actions hero-enter"><a class="button button-dark" href="#nos">Tem uma surpresa para você <span aria-hidden="true">↓</span></a><a class="text-link" href="#carta">Ler minha mensagem <span aria-hidden="true">↗</span></a></div>
+      </div>
+      <div class="hero-bottom"><span>DE SANSAN, COM TODO O AMOR</span><a href="#carta">Desça devagar <span class="scroll-line" aria-hidden="true"></span></a><span>PARA A MINHA PRINCESA</span></div>
+    </section>
 
-<footer class="footer">feito por SanSan com muito amor para a Minha Princesa</footer>
-</main>
-<script>
-const button = document.querySelector('#send-heart');
-const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
-button.addEventListener('click', () => {
-  const bounds = button.getBoundingClientRect();
-  const heart = document.createElement('span');
-  heart.className = 'floating-heart';
-  heart.setAttribute('aria-hidden', 'true');
-  heart.innerHTML = '<svg viewBox="0 0 64 64"><path d="M32 54S5 38 5 21C5 4 27 4 32 19C37 4 59 4 59 21C59 38 32 54 32 54Z"/></svg>';
-  heart.style.left = (bounds.left + bounds.width / 2) + 'px';
-  heart.style.top = (bounds.top + bounds.height / 2) + 'px';
-  heart.style.setProperty('--drift', (Math.random() * 100 - 50) + 'px');
-  heart.style.setProperty('--rise', -(bounds.top + bounds.height / 2 + 60) + 'px');
-  document.body.append(heart);
-  heart.addEventListener('animationend', () => heart.remove(), { once: true });
-  setTimeout(() => heart.remove(), reducedMotion.matches ? 1800 : 3000);
-});
-</script>
-</body></html>
+    <section class="letter-section" id="carta" aria-labelledby="letter-title">
+      <div class="letter-top"><p class="eyebrow">ALGUMAS COISAS A GENTE SÓ SENTE.</p><svg class="small-spark" aria-hidden="true"><use href="#sparkle"/></svg></div>
+      <h2 id="letter-title" class="sr-only">Meu lugar favorito</h2>
+      <p class="love-sentence">No meio de um mundo tão grande, eu encontrei meu lugar favorito: <span class="inline-portraits" aria-hidden="true"><img src="assets/sansan.webp" alt="" width="640" height="640" loading="lazy"><img src="assets/raissa.webp" alt="" width="640" height="640" loading="lazy"></span> <em>ao seu lado.</em></p>
+      <div class="letter-signature"><span class="fine-line"></span><p>É você. É a gente. É tudo aquilo<br>que eu quero guardar pertinho.</p></div>
+    </section>
+
+    <section class="shell-section" id="nos" aria-labelledby="shell-title">
+      <div class="shell-heading reveal"><p class="eyebrow">O NOSSO PEQUENO UNIVERSO</p><h2 id="shell-title">O melhor tesouro<br>é <em>ter você.</em></h2><p>Tem um pedacinho de nós guardado aqui.</p></div>
+      <div class="shell-scene" id="shell-scene">
+        <div class="shell-halo" aria-hidden="true"></div>
+        <div class="shell-spark spark-one" aria-hidden="true"><svg><use href="#sparkle"/></svg></div>
+        <div class="shell-spark spark-two" aria-hidden="true"><svg><use href="#sparkle"/></svg></div>
+        <div class="shell-spark spark-three" aria-hidden="true"><svg><use href="#sparkle"/></svg></div>
+        <div class="shell-inner" aria-hidden="true"></div>
+        <div class="couple" id="couple" role="group" aria-label="SanSan e Raissa juntos dentro da concha" aria-hidden="true">
+          <figure class="portrait sansan"><img src="assets/sansan.webp" alt="Personagem de SanSan, com óculos e boné colorido" width="640" height="640" loading="lazy" decoding="async"><figcaption>SanSan</figcaption></figure>
+          <svg class="couple-heart" aria-hidden="true"><use href="#heart"/></svg>
+          <figure class="portrait raissa"><img src="assets/raissa.webp" alt="Personagem de Raissa, com pijama e capuz da Hello Kitty" width="640" height="640" loading="lazy" decoding="async"><figcaption>Raissa</figcaption></figure>
+        </div>
+        <div class="shell-lid" aria-hidden="true">
+          <svg viewBox="0 0 600 420" xmlns="http://www.w3.org/2000/svg">
+            <defs><linearGradient id="shell-fill" x1="0" y1="0" x2=".8" y2="1"><stop offset="0" stop-color="#fff9ef"/><stop offset=".48" stop-color="#eec6bd"/><stop offset="1" stop-color="#b9787d"/></linearGradient><radialGradient id="shell-shine" cx=".5" cy=".1" r=".85"><stop stop-color="#fffdf4" stop-opacity=".9"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></radialGradient></defs>
+            <path d="M300 397C269 395 233 374 208 360C164 370 128 348 122 316C78 315 48 283 56 249C18 227 19 181 48 161C28 124 52 84 89 85C89 43 128 23 160 42C180 1 219 1 244 26C272 -4 310 -5 334 25C365 0 403 13 414 46C454 30 489 54 487 93C530 90 556 122 542 160C578 182 578 220 548 245C560 282 531 314 494 317C482 352 446 365 410 359C372 385 335 397 300 397Z" fill="url(#shell-fill)" stroke="#d49a98" stroke-width="2"/>
+            <path d="M300 391Q110 307 56 249M300 391Q119 204 48 161M300 391Q139 136 89 85M300 391Q195 90 160 42M300 391Q240 91 244 26M300 391Q295 75 300 10M300 391Q335 87 334 25M300 391Q390 93 414 46M300 391Q448 136 487 93M300 391Q502 211 542 160M300 391Q507 299 548 245M300 391Q434 342 494 317M300 391Q204 361 122 316" fill="none" stroke="#ae7779" stroke-opacity=".28" stroke-width="4"/>
+            <path d="M300 388Q171 141 113 74M300 388Q218 80 190 30M300 388Q263 70 275 15M300 388Q360 74 374 30M300 388Q429 110 452 63M300 388Q479 179 521 126M300 388Q510 260 552 204" fill="none" stroke="#fff9ed" stroke-opacity=".6" stroke-width="6"/>
+            <ellipse cx="300" cy="192" rx="210" ry="153" fill="url(#shell-shine)"/>
+          </svg>
+        </div>
+        <svg class="shell-base" viewBox="0 0 600 180" aria-hidden="true"><defs><linearGradient id="base-fill" x2="0" y2="1"><stop stop-color="#f7ddd2"/><stop offset=".5" stop-color="#dca4a1"/><stop offset="1" stop-color="#b77b83"/></linearGradient></defs><path d="M44 51Q98 34 148 52Q199 36 249 50Q300 31 351 50Q405 36 454 52Q504 34 556 51C527 135 424 169 300 172C177 169 73 135 44 51Z" fill="url(#base-fill)" stroke="#c58d90" stroke-width="2"/><path d="M44 51Q100 73 148 52Q199 76 249 50Q300 76 351 50Q405 76 454 52Q503 73 556 51" fill="none" stroke="#fff3e5" stroke-width="6"/><path d="M300 167L148 61M300 167L249 58M300 167L351 58M300 167L454 61" fill="none" stroke="#a76e7b" stroke-opacity=".35" stroke-width="2"/></svg>
+        <div class="pearl shell-pearl" aria-hidden="true"></div>
+      </div>
+      <div class="shell-control"><button class="button button-outline" id="shell-toggle" aria-expanded="false" aria-controls="couple">Abrir nossa concha <span aria-hidden="true">+</span></button><p>Um toque. Nós dois. O mundo inteiro.</p><span class="sr-only" role="status" id="shell-status"></span></div>
+      <noscript><style>.couple{opacity:1!important;transform:none!important}.shell-lid{transform:rotateX(110deg)!important}.shell-control{display:none}</style><p class="noscript-message">SanSan e Raissa, juntinhos.</p></noscript>
+    </section>
+
+    <div class="love-ribbon" aria-hidden="true"><div class="ribbon-track"><span>você & eu <i>sempre</i> você & eu <i>sempre</i> </span><span>você & eu <i>sempre</i> você & eu <i>sempre</i> </span></div></div>
+
+    <section class="messages-section" aria-labelledby="messages-title">
+      <div class="messages-heading reveal"><p class="eyebrow">SE EU PUDESSE TE LEMBRAR UMA COISA...</p><h2 id="messages-title">Que seja <em>isso.</em></h2></div>
+      <div class="message-carousel" aria-roledescription="carrossel" aria-label="Mensagens de SanSan para Raissa">
+        <div class="message-portraits" aria-hidden="true"><img src="assets/sansan.webp" alt="" width="640" height="640" loading="lazy"><img src="assets/raissa.webp" alt="" width="640" height="640" loading="lazy"></div>
+        <div class="message-stage" aria-live="polite" aria-atomic="true"><p id="message-text">Você deixa os dias mais bonitos,<br>e a vida mais cheia de amor.</p></div>
+        <div class="message-controls"><button class="round-button" id="previous-message" aria-label="Mensagem anterior">←</button><span class="message-index" id="message-index" aria-label="Mensagem 1 de 3">01 <span>/ 03</span></span><button class="round-button" id="next-message" aria-label="Próxima mensagem">→</button></div>
+      </div>
+    </section>
+
+    <section class="heart-section" id="coracao" aria-labelledby="heart-title">
+      <div class="heart-section-orbit" aria-hidden="true"></div>
+      <p class="eyebrow reveal">E SE AINDA FALTAREM PALAVRAS...</p>
+      <h2 id="heart-title" class="reveal">Meu coração<br>é <em>todo seu.</em></h2>
+      <p class="heart-description reveal">Um toque, um carinho.<br>Quantas vezes você quiser.</p>
+      <button class="heart-button" id="send-heart" aria-label="Soltar um coração para Raissa"><svg viewBox="0 0 64 64" aria-hidden="true"><use href="#heart"/></svg></button>
+      <p class="heart-hint">Toque e veja o amor subir</p>
+      <span class="sr-only" role="status" id="heart-status"></span>
+      <p class="closing-line">Eu amo você, Raissa.<br><span>Hoje. Amanhã. Em cada novo dia.</span></p>
+    </section>
+  </main>
+  <footer class="footer"><span class="footer-mark" aria-hidden="true">S & R</span><p>feito por <strong>SanSan</strong> com muito amor<br>para a <em>Minha Princesa</em></p><a href="#inicio" aria-label="Voltar ao início">↑</a></footer>
+</body>
+</html>

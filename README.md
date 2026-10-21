@@ -1,16 +1,22 @@
-# Eu amo você, Raissa ♡
+# Para Raissa, com amor
 
-Uma página romântica adaptada para celular, com fontes elegantes e um botão em forma de coração. Cada toque solta um coração que sobe pela tela.
+Uma declaração de SanSan para Raissa, feita para abrir no celular.
 
-Dedicatória: feito por SanSan com muito amor para a Minha Princesa.
+Esta versão inclui transições durante a rolagem, uma concha que revela os dois personagens juntos, mensagens navegáveis e um coração que sobe a cada toque. O botão da concha também permite abri-la e fechá-la manualmente. A página respeita a preferência de movimento reduzido.
 
-## Publicar no GitHub Pages
+## GitHub Pages
 
-1. Abra **Settings → Pages** neste repositório.
-2. Em **Source**, escolha **Deploy from a branch**.
-3. Escolha **main** e **/ (root)**.
-4. Clique em **Save** e aguarde o GitHub publicar.
+Em Settings → Pages, use Deploy from a branch, branch main e pasta / (root).
 
-Após a publicação, o endereço esperado é https://mathe2136.github.io/fjfj/ . O link só estará disponível depois de ativar o Pages e a implantação concluir.
+Endereço: https://mathe2136.github.io/fjfj/
 
-O site usa somente HTML, CSS e JavaScript. Não precisa instalar dependências ou compilar.
+Não há instalação ou compilação. Mantenha index.html, styles.css, app.js, assets/ e vendor/ juntos. As imagens e o GSAP são servidos pelo próprio repositório. As fontes possuem alternativas locais caso Google Fonts ou Fontshare estejam indisponíveis.
+
+## Referências de direção e movimento
+
+- Lusion: https://lusion.co/about/ — narrativa visual e descoberta por interação.
+- GSAP ScrollTrigger: https://gsap.com/docs/v3/Plugins/ScrollTrigger/ — revelação de texto e transições ligadas à rolagem.
+
+Composição e concha desenhadas para este projeto. Personagens fornecidos pelo autor da página.
+
+GSAP 3.13.0 e ScrollTrigger preservam os avisos de licença nos arquivos em vendor/. Termos: https://gsap.com/standard-license/
