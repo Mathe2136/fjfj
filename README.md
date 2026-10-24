@@ -43,3 +43,10 @@ A tampa da concha abre de 68° até 0° ao redor da dobradiça, sem ultrapassar 
 ## Nossa linha do tempo e áudio da MiMi
 
 A página inicial inclui quatro marcos sem ano presumido: 19/07 (primeiro oi), 14/08 (primeiras mensagens), 02/09 (entrega da pelúcia Nina) e 02/10 (pedido de namoro). Em Frases importantes para a MiMi, um botão reproduz e pausa `assets/audio/frases-mimi.m4a`, extraído do MP4 enviado pelo autor. Só a faixa de áudio é publicada, sem vídeo e sem reprodução automática. Os controles ficam em `quote-audio.js`.
+
+
+## Direção da linha do tempo
+
+A linha SVG é desenhada pela posição real da rolagem, com uma pérola na ponta e destaque do marco atual. O texto permanece disponível sem JavaScript e todas as datas aparecem sem animação quando movimento reduzido está ativado. O título acompanha a leitura em telas grandes e fica no fluxo normal no celular. Implementação própria em `timeline.js`.
+
+Referências de direção: [Scroll-Drawn SVG Timeline](https://codepen.io/sainul/pen/bNqMpXq), pelo desenho progressivo do caminho; [KOTAverse](https://www.awwwards.com/sites/the-kotaverse), pela descoberta gradual dos marcos. A terceira referência enviada, Chrono Rail, não estava acessível durante esta atualização.
