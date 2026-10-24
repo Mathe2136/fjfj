@@ -73,4 +73,47 @@
   if ('ResizeObserver' in window) new ResizeObserver(measure).observe(journey);
   motion.addEventListener('change', measure);
 
+  const button = document.querySelector('#send-nina');
+  const status = document.querySelector('#nina-status');
+  if (!button) return;
+  let imagePromise;
+  let count = 0;
+  let announcement;
+  function loadNina() {
+    if (!imagePromise) imagePromise = new Promise((resolve, reject) => {
+      const img = new Image();
+      img.onload = () => resolve(img.src);
+      img.onerror = () => { imagePromise = null; reject(new Error('Nina image unavailable')); };
+      img.src = button.dataset.image;
+    });
+    return imagePromise;
+  }
+  button.addEventListener('click', async () => {
+    const box = button.getBoundingClientRect();
+    let src;
+    try { src = await loadNina(); }
+    catch { status.textContent = 'A imagem não carregou. Tente novamente.'; return; }
+    const bubble = document.createElement('span');
+    bubble.className = 'nina-bubble';
+    bubble.setAttribute('aria-hidden', 'true');
+    const img = document.createElement('img');
+    img.src = src;
+    img.alt = '';
+    bubble.append(img);
+    const x = Math.min(window.innerWidth - 42, Math.max(42, box.left + box.width / 2));
+    const y = box.top + box.height / 2;
+    bubble.style.left = `${x}px`;
+    bubble.style.top = `${y}px`;
+    bubble.style.setProperty('--nina-drift', `${Math.random() * 90 - 45}px`);
+    bubble.style.setProperty('--nina-turn', `${Math.random() * 16 - 8}deg`);
+    bubble.style.setProperty('--nina-rise', `${-Math.max(240, y + 100)}px`);
+    document.body.append(bubble);
+    bubble.addEventListener('animationend', () => bubble.remove(), { once: true });
+    window.setTimeout(() => bubble.remove(), motion.matches ? 1700 : 3500);
+    const bubbles = [...document.querySelectorAll('.nina-bubble')];
+    if (bubbles.length > 24) bubbles.slice(0, bubbles.length - 24).forEach(node => node.remove());
+    count++;
+    clearTimeout(announcement);
+    announcement = window.setTimeout(() => { status.textContent = `${count} ${count === 1 ? 'abraço da Nina enviado' : 'abraços da Nina enviados'}.`; }, 250);
+  });
 })();

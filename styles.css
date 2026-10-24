@@ -68,3 +68,6 @@
 @keyframes nina-fade{0%,65%{opacity:1}100%{opacity:0}}
 
 .nina-label{cursor:default;padding:8px 14px}.nina-label:hover{transform:none;background:#f5dbe3}
+
+
+img.nina-button-photo{object-fit:contain;padding:2px;background:#f9ede4}
