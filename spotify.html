@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#151016">
+  <meta name="description" content="Nosso Spotify: a trilha sonora de SanSan e Raissa. Escolha uma música da playlist San e Rai e dê o play na gente.">
+  <meta property="og:title" content="Nosso Spotify — SanSan & Raissa">
+  <meta property="og:description" content="Nossa história, em modo replay.">
+  <meta property="og:image" content="https://mathe2136.github.io/fjfj/assets/nosso-spotify.webp">
+  <title>Nosso Spotify — SanSan & Raissa</title>
+  <link rel="icon" href="assets/heart.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="spotify.css">
+  <script defer src="spotify.js"></script>
+</head>
+<body class="music-page">
+  <a class="skip-link" href="#ouvir">Pular para o player</a>
+  <header class="music-header"><a class="monogram" href="index.html" aria-label="Voltar à nossa história">S<span>&</span>R<span class="monogram-dot">.</span></a><nav aria-label="Navegação principal"><a href="index.html">Nossa história</a><a href="spotify.html" aria-current="page">Nosso Spotify</a></nav></header>
+  <main>
+    <section class="music-hero" aria-labelledby="music-title">
+      <div class="music-copy">
+        <p class="eyebrow"><span class="green-dot" aria-hidden="true"></span> SAN E RAI · NOSSA PLAYLIST</p>
+        <h1 id="music-title">Nossa história,<br><em>em modo replay.</em></h1>
+        <p class="music-intro">Tem música que parece abraço.<br>E tem uma playlist inteira que me lembra nós dois.</p>
+        <div class="music-actions"><a class="button music-primary" href="#ouvir"><span aria-hidden="true">♫</span> Escolher uma música</a><a class="music-external" href="https://open.spotify.com/playlist/1cTilm7NeUkhR1FIsdrs3t" target="_blank" rel="noopener noreferrer">Abrir no Spotify <span aria-hidden="true">↗</span></a></div>
+        <p class="music-dedication">De SanSan, para a minha companhia favorita.</p>
+      </div>
+      <figure class="album-art"><div class="vinyl" aria-hidden="true"></div><div class="cover-frame"><img src="assets/nosso-spotify.webp" alt="SanSan e Raissa juntos usando fones de ouvido, cercados de discos, notas musicais e corações cor-de-rosa" width="800" height="800" fetchpriority="high"></div><figcaption><span>SAN & RAI</span><span>dois corações, a mesma sintonia.</span></figcaption></figure>
+    </section>
+    <div class="music-divider" aria-hidden="true"><span>uma música</span><span>um carinho</span><span>um pedacinho de nós</span></div>
+    <section class="listening-room" id="ouvir" aria-labelledby="listen-title">
+      <div class="listen-heading"><p class="eyebrow">A NOSSA TRILHA SONORA</p><h2 id="listen-title">Dá o play <em>na gente.</em></h2><p>Escolha um destaque ou explore a playlist inteira.</p></div>
+      <div class="listen-layout">
+        <div class="track-selection"><div class="selection-heading"><h3>Um pouco da nossa playlist</h3><span>03 escolhas</span></div>
+          <div class="track-list" aria-label="Selecionar uma música para o player">
+            <button class="track-button" type="button" data-track="1do4XVNpQSj5QmOQ5gQpCH" data-title="Fica" aria-pressed="false" aria-controls="spotify-player"><span class="track-number">01</span><span class="track-info"><strong>Fica</strong><small>ANAVITÓRIA, Matheus & Kauan</small></span><span class="track-arrow" aria-hidden="true">↗</span></button>
+            <button class="track-button" type="button" data-track="2pWMc34naG2miGcu5R4kYY" data-title="No Escuro" aria-pressed="false" aria-controls="spotify-player"><span class="track-number">02</span><span class="track-info"><strong>No Escuro</strong><small>Ana Gabriela, ANAVITÓRIA</small></span><span class="track-arrow" aria-hidden="true">↗</span></button>
+            <button class="track-button" type="button" data-track="2NnSYdNhqye00il4nRB4tj" data-title="Nocaute" aria-pressed="false" aria-controls="spotify-player"><span class="track-number">03</span><span class="track-info"><strong>Nocaute</strong><small>Jorge & Mateus</small></span><span class="track-arrow" aria-hidden="true">↗</span></button>
+          </div>
+          <button class="playlist-button" id="show-playlist" type="button" aria-pressed="true" aria-controls="spotify-player"><span aria-hidden="true">♫</span> Playlist completa <span aria-hidden="true">→</span></button>
+          <p class="selection-note">Escolha aqui e toque em reproduzir no player.</p>
+          <noscript><style>.track-list,.playlist-button,.selection-note{display:none}</style><p>Escolha sua música diretamente no player do Spotify.</p></noscript>
+        </div>
+        <div class="player-panel" id="player-panel"><div class="player-heading"><span class="eyebrow">NO SPOTIFY</span><span id="player-selection">San e Rai</span></div>
+          <iframe id="spotify-player" title="Playlist San e Rai de Santi no Spotify" src="https://open.spotify.com/embed/playlist/1cTilm7NeUkhR1FIsdrs3t?utm_source=generator&theme=0" width="100%" height="352" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+          <p class="player-status" id="player-status" role="status" aria-live="polite">Nossa playlist completa, pronta para você escolher.</p>
+          <a id="player-open" href="https://open.spotify.com/playlist/1cTilm7NeUkhR1FIsdrs3t" target="_blank" rel="noopener noreferrer">Ouvir a playlist no Spotify <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
+    <section class="music-note" aria-labelledby="music-note-title"><p class="eyebrow">MINHA FAIXA FAVORITA É A GENTE.</p><h2 id="music-note-title">Se for com você,<br>eu deixo <em>no repeat.</em></h2><p>Raissa, entre uma música e outra,<br>eu continuo escolhendo você.</p><a href="index.html#coracao" class="button music-outline">Voltar para o meu coração <span aria-hidden="true">↗</span></a></section>
+  </main>
+  <footer class="footer"><a class="footer-mark" href="index.html" aria-label="Voltar à nossa história">S & R</a><p>feito por <strong>SanSan</strong> com muito amor<br>para a <em>Minha Princesa</em></p><a href="#music-title" aria-label="Voltar ao topo">↑</a></footer>
+</body>
+</html>

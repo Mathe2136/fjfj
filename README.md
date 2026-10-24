@@ -20,3 +20,11 @@ Não há instalação ou compilação. Mantenha index.html, styles.css, app.js, 
 Composição e concha desenhadas para este projeto. Personagens fornecidos pelo autor da página.
 
 GSAP 3.13.0 e ScrollTrigger preservam os avisos de licença nos arquivos em vendor/. Termos: https://gsap.com/standard-license/
+
+## Nosso Spotify
+
+A página `spotify.html` reúne a playlist San e Rai, a capa personalizada fornecida pelo autor e uma seleção de Fica, No Escuro e Nocaute. Os botões carregam cada faixa no player oficial; o botão Playlist completa restaura a seleção integral. A reprodução é controlada pelo Spotify e depende da disponibilidade e das condições do serviço para o visitante. A capa personalizada pertence à apresentação do site; o conteúdo interno do player continua sob controle do Spotify.
+
+Playlist: https://open.spotify.com/playlist/1cTilm7NeUkhR1FIsdrs3t
+
+Use `spotify.css` e `spotify.js` para ajustar essa página. A navegação da página inicial inclui Nosso Spotify.
