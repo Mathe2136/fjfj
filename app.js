@@ -54,27 +54,66 @@
     }, 300);
   });
 
-  const messages = [
-    ['Você deixa os dias mais bonitos,', 'e a vida mais cheia de amor.'],
-    ['De todas as coisas bonitas da vida,', 'você é a minha favorita.'],
-    ['Em cada novo amanhã,', 'eu escolheria você de novo.']
-  ];
+  const messageStage = document.querySelector('#message-stage');
+  const messageCards = [...messageStage.querySelectorAll('.message-card')];
+  const messageDots = [...document.querySelectorAll('.message-dots i')];
+  const messageIndicator = document.querySelector('#message-index');
   let messageIndex = 0;
-  let messageAnimation;
-  const message = document.querySelector('#message-text');
-  function changeMessage(direction) {
-    messageIndex = (messageIndex + direction + messages.length) % messages.length;
-    if (messageAnimation) messageAnimation.cancel();
-    message.replaceChildren(document.createTextNode(messages[messageIndex][0]), document.createElement('br'), document.createTextNode(messages[messageIndex][1]));
-    const indicator = document.querySelector('#message-index');
-    indicator.innerHTML = `0${messageIndex + 1} <span>/ 03</span>`;
-    indicator.setAttribute('aria-label', `Mensagem ${messageIndex + 1} de 3`);
-    if (!reducedMotion.matches && message.animate) {
-      messageAnimation = message.animate([{ opacity: 0, transform: 'translateY(12px)' }, { opacity: 1, transform: 'translateY(0)' }], { duration: 450, easing: 'ease-out' });
-    }
+  let messageFrame = 0;
+  let mouseDrag = null;
+
+  function updateMessagePosition() {
+    messageFrame = 0;
+    const width = messageStage.clientWidth;
+    if (!width) return;
+    const next = Math.max(0, Math.min(messageCards.length - 1, Math.round(messageStage.scrollLeft / width)));
+    if (next === messageIndex) return;
+    messageIndex = next;
+    messageIndicator.innerHTML = `0${next + 1} <span>/ 03</span>`;
+    messageIndicator.setAttribute('aria-label', `Mensagem ${next + 1} de 3`);
+    messageDots.forEach((dot, i) => dot.classList.toggle('is-current', i === next));
   }
-  document.querySelector('#previous-message').addEventListener('click', () => changeMessage(-1));
-  document.querySelector('#next-message').addEventListener('click', () => changeMessage(1));
+  function goToMessage(index, instant = false) {
+    const target = Math.max(0, Math.min(messageCards.length - 1, index));
+    messageStage.scrollTo({ left: target * messageStage.clientWidth, behavior: instant || reducedMotion.matches ? 'instant' : 'smooth' });
+  }
+  messageStage.addEventListener('scroll', () => {
+    if (!messageFrame) messageFrame = requestAnimationFrame(updateMessagePosition);
+  }, { passive: true });
+  messageStage.addEventListener('keydown', event => {
+    const directions = { ArrowLeft: messageIndex - 1, ArrowRight: messageIndex + 1, Home: 0, End: messageCards.length - 1 };
+    if (!(event.key in directions)) return;
+    event.preventDefault();
+    goToMessage(directions[event.key]);
+  });
+  // Touch uses the browser's native swipe. Mouse dragging adds the same gesture on desktop.
+  messageStage.addEventListener('pointerdown', event => {
+    if (event.pointerType !== 'mouse' || event.button !== 0) return;
+    mouseDrag = { x: event.clientX, left: messageStage.scrollLeft, index: messageIndex, id: event.pointerId };
+    messageStage.classList.add('is-dragging');
+    messageStage.setPointerCapture(event.pointerId);
+  });
+  messageStage.addEventListener('pointermove', event => {
+    if (!mouseDrag || event.pointerId !== mouseDrag.id) return;
+    messageStage.scrollLeft = mouseDrag.left + mouseDrag.x - event.clientX;
+  });
+  function finishMessageDrag(event) {
+    if (!mouseDrag || event.pointerId !== mouseDrag.id) return;
+    const drag = mouseDrag;
+    mouseDrag = null;
+    messageStage.classList.remove('is-dragging');
+    if (messageStage.hasPointerCapture(event.pointerId)) messageStage.releasePointerCapture(event.pointerId);
+    const distance = drag.x - event.clientX;
+    const direction = event.type === 'pointercancel' || Math.abs(distance) < 35 ? 0 : Math.sign(distance);
+    goToMessage(drag.index + direction);
+  }
+  messageStage.addEventListener('pointerup', finishMessageDrag);
+  messageStage.addEventListener('pointercancel', finishMessageDrag);
+  messageStage.addEventListener('lostpointercapture', event => {
+    if (!mouseDrag) return;
+    finishMessageDrag({ pointerId: event.pointerId, clientX: mouseDrag.x, type: 'pointercancel' });
+  });
+  window.addEventListener('resize', () => goToMessage(messageIndex, true));
 
   // Keep the scroll position native, including on touch screens.
   let progressPending = false;
@@ -122,7 +161,7 @@
     gsap.to(shell, { opacity: .3, ease: 'none', scrollTrigger: { trigger: shell, start: 'bottom 22%', end: 'bottom top', scrub: .5 } });
     shell.classList.remove('is-open');
     shell.classList.add('gsap-shell');
-    shellTimeline = gsap.timeline({ paused: true }).to(lid, { rotateX: 110, duration: 1.2, ease: 'power2.inOut' }, 0).to(couple, { opacity: 1, y: 0, scale: 1, duration: .8, ease: 'power2.out' }, .35);
+    shellTimeline = gsap.timeline({ paused: true }).fromTo(lid, { rotateX: 68 }, { rotateX: 0, duration: 1.2, ease: 'power2.inOut' }, 0).to(couple, { opacity: 1, y: 0, scale: 1, duration: .7, ease: 'power2.out' }, .45);
     if (shellOpen) shellTimeline.progress(1);
     const opening = ScrollTrigger.create({ trigger: shell, start: 'top 55%', end: 'center 35%', onUpdate: self => {
       if (manuallyControlled || !shellTimeline) return;
@@ -142,3 +181,4 @@
   if (document.fonts) document.fonts.ready.then(() => ScrollTrigger.refresh());
   window.addEventListener('load', () => ScrollTrigger.refresh(), { once: true });
 })();
+

@@ -13,10 +13,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
   <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=20261024-shell-4">
   <script defer src="vendor/gsap.min.js"></script>
   <script defer src="vendor/ScrollTrigger.min.js"></script>
-  <script defer src="app.js"></script>
+  <script defer src="app.js?v=20261024-shell-4"></script>
 </head>
 <body>
   <a class="skip-link" href="#inicio">Pular para a declaração</a>
@@ -77,7 +77,7 @@
         <div class="pearl shell-pearl" aria-hidden="true"></div>
       </div>
       <div class="shell-control"><button class="button button-outline" id="shell-toggle" aria-expanded="false" aria-controls="couple">Abrir nossa concha <span aria-hidden="true">+</span></button><p>Um toque. Nós dois. O mundo inteiro.</p><span class="sr-only" role="status" id="shell-status"></span></div>
-      <noscript><style>.couple{opacity:1!important;transform:none!important}.shell-lid{transform:rotateX(110deg)!important}.shell-control{display:none}</style><p class="noscript-message">SanSan e Raissa, juntinhos.</p></noscript>
+      <noscript><style>.couple{opacity:1!important;transform:none!important}.shell-lid{transform:rotateX(0deg)!important}.shell-control{display:none}</style><p class="noscript-message">SanSan e Raissa, juntinhos.</p></noscript>
     </section>
 
     <div class="love-ribbon" aria-hidden="true"><div class="ribbon-track"><span>você & eu <i>sempre</i> você & eu <i>sempre</i> </span><span>você & eu <i>sempre</i> você & eu <i>sempre</i> </span></div></div>
@@ -86,8 +86,13 @@
       <div class="messages-heading reveal"><p class="eyebrow">SE EU PUDESSE TE LEMBRAR UMA COISA...</p><h2 id="messages-title">Que seja <em>isso.</em></h2></div>
       <div class="message-carousel" aria-roledescription="carrossel" aria-label="Mensagens de SanSan para Raissa">
         <div class="message-portraits" aria-hidden="true"><img src="assets/sansan.webp" alt="" width="640" height="640" loading="lazy"><img src="assets/raissa.webp" alt="" width="640" height="640" loading="lazy"></div>
-        <div class="message-stage" aria-live="polite" aria-atomic="true"><p id="message-text">Você deixa os dias mais bonitos,<br>e a vida mais cheia de amor.</p></div>
-        <div class="message-controls"><button class="round-button" id="previous-message" aria-label="Mensagem anterior">←</button><span class="message-index" id="message-index" aria-label="Mensagem 1 de 3">01 <span>/ 03</span></span><button class="round-button" id="next-message" aria-label="Próxima mensagem">→</button></div>
+        <div class="message-stage" id="message-stage" tabindex="0" role="region" aria-label="Cartões de amor" aria-describedby="message-swipe-hint">
+          <div class="message-card" role="group" aria-roledescription="slide" aria-label="Mensagem 1 de 3"><p>Você deixa os dias mais bonitos,<br>e a vida mais cheia de amor.</p></div>
+          <div class="message-card" role="group" aria-roledescription="slide" aria-label="Mensagem 2 de 3"><p>De todas as coisas bonitas da vida,<br>você é a minha favorita.</p></div>
+          <div class="message-card" role="group" aria-roledescription="slide" aria-label="Mensagem 3 de 3"><p>Em cada novo amanhã,<br>eu escolheria você de novo.</p></div>
+        </div>
+        <div class="message-pagination"><span class="message-index" id="message-index" role="status" aria-live="polite" aria-atomic="true" aria-label="Mensagem 1 de 3">01 <span>/ 03</span></span><span class="message-dots" aria-hidden="true"><i class="is-current"></i><i></i><i></i></span></div>
+        <p class="message-swipe-hint" id="message-swipe-hint"><span aria-hidden="true">←</span> Deslize para a esquerda <span class="sr-only">ou use as setas do teclado para mudar de mensagem.</span></p>
       </div>
     </section>
 
@@ -110,3 +115,4 @@
   <footer class="footer"><span class="footer-mark" aria-hidden="true">S & R</span><p>feito por <strong>SanSan</strong> com muito amor<br>para a <em>Minha Princesa</em></p><a href="#inicio" aria-label="Voltar ao início">↑</a></footer>
 </body>
 </html>
+

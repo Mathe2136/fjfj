@@ -2,7 +2,7 @@
 
 Uma declaração de SanSan para Raissa, feita para abrir no celular.
 
-Esta versão inclui transições durante a rolagem, uma concha que revela os dois personagens juntos, mensagens navegáveis e um coração que sobe a cada toque. O botão da concha também permite abri-la e fechá-la manualmente. A página respeita a preferência de movimento reduzido.
+Esta versão inclui transições durante a rolagem, uma concha que revela os dois personagens juntos, mensagens em telas que deslizam horizontalmente e um coração que sobe a cada toque. O botão da concha também permite abri-la e fechá-la manualmente. A página respeita a preferência de movimento reduzido.
 
 ## GitHub Pages
 
@@ -34,3 +34,7 @@ Os destaques incluem ondas decorativas animadas, sem logotipo, com controle de p
 ## Áudio no site
 
 Os três arquivos enviados pelo autor estão em `assets/audio/`, em AAC/M4A com metadados de reprodução no início do arquivo. O player HTML5 tem controles personalizados com ondas animadas durante a reprodução, botão de pausa, tempo e busca real por toque, arrasto ou teclado. As três músicas e o player aparecem antes do botão Playlist completa. A reprodução exige um toque do visitante. O player e os links oficiais do Spotify continuam disponíveis separadamente; o controle de trechos é aplicado ao áudio hospedado no site.
+
+## Concha e mensagens
+
+A tampa da concha abre de 68° até 0° ao redor da dobradiça, sem ultrapassar 90° nem virar para dentro da base. A seção Que seja isso contém três telas com rolagem horizontal nativa, encaixe entre mensagens e indicador de posição. No celular, deslize para a esquerda para avançar e para a direita para voltar. Também há arrasto com mouse e navegação pelas setas, Home e End do teclado.
