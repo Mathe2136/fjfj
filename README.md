@@ -23,7 +23,7 @@ GSAP 3.13.0 e ScrollTrigger preservam os avisos de licença nos arquivos em vend
 
 ## Nosso Spotify
 
-A página `spotify.html` reúne a playlist San e Rai, a capa personalizada fornecida pelo autor e uma seleção de Alice e o Jaguadarte (1:47 a 2:10), Me Beija de GMeyer (0:01 a 1:23) e Portugal (0:07 a 3:36). Os botões carregam cada faixa no player oficial; o botão Playlist completa restaura a seleção integral. A reprodução é controlada pelo Spotify e depende da disponibilidade e das condições do serviço para o visitante. A capa personalizada pertence à apresentação do site; o conteúdo interno do player continua sob controle do Spotify.
+A página `spotify.html` reúne a playlist San e Rai, a capa personalizada fornecida pelo autor e uma seleção de Alice e o Jaguadarte (1:47 a 2:10), Me Beija de GMeyer (0:01 a 1:23) e Best Part de Daniel Caesar e H.E.R. (2:09 a 2:47). Os botões carregam cada faixa no player oficial; o botão Playlist completa restaura a seleção integral. A reprodução é controlada pelo Spotify e depende da disponibilidade e das condições do serviço para o visitante. A capa personalizada pertence à apresentação do site; o conteúdo interno do player continua sob controle do Spotify.
 
 Playlist: https://open.spotify.com/playlist/1cTilm7NeUkhR1FIsdrs3t
 
