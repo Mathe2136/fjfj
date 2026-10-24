@@ -29,4 +29,8 @@ Playlist: https://open.spotify.com/playlist/1cTilm7NeUkhR1FIsdrs3t
 
 Use `spotify.css` e `spotify.js` para ajustar essa página. A navegação da página inicial inclui Nosso Spotify.
 
-Os destaques incluem ondas decorativas animadas, sem logotipo, com controle de pausa e suporte a movimento reduzido. Os horários são marcações visuais dos trechos; não cortam nem avançam a reprodução automaticamente. Me Beija carrega o lançamento oficial de GMeyer (a faixa original aparece primeiro no player).
+Os destaques incluem ondas decorativas animadas, sem logotipo, com controle de pausa e suporte a movimento reduzido. Os horários controlam o player de áudio local: cada seleção prepara o início indicado, e Ouvir trecho pausa no final escolhido. A barra nativa permite avançar e voltar; buscar fora do trecho muda para música inteira. Música inteira começa do início. Me Beija carrega o lançamento oficial de GMeyer (a faixa original aparece primeiro no player).
+
+## Áudio no site
+
+Os três arquivos enviados pelo autor estão em `assets/audio/`, em AAC/M4A com metadados de reprodução no início do arquivo. O player HTML5 oferece reprodução, pausa, tempo e busca real. A reprodução exige um toque do visitante. O player e os links oficiais do Spotify continuam disponíveis separadamente; o controle de trechos é aplicado ao áudio hospedado no site.
