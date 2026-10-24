@@ -23,8 +23,10 @@ GSAP 3.13.0 e ScrollTrigger preservam os avisos de licença nos arquivos em vend
 
 ## Nosso Spotify
 
-A página `spotify.html` reúne a playlist San e Rai, a capa personalizada fornecida pelo autor e uma seleção de Fica, No Escuro e Nocaute. Os botões carregam cada faixa no player oficial; o botão Playlist completa restaura a seleção integral. A reprodução é controlada pelo Spotify e depende da disponibilidade e das condições do serviço para o visitante. A capa personalizada pertence à apresentação do site; o conteúdo interno do player continua sob controle do Spotify.
+A página `spotify.html` reúne a playlist San e Rai, a capa personalizada fornecida pelo autor e uma seleção de Alice e o Jaguadarte (1:47 a 2:10), Me Beija de GMeyer (0:01 a 1:23) e Portugal (0:07 a 3:36). Os botões carregam cada faixa no player oficial; o botão Playlist completa restaura a seleção integral. A reprodução é controlada pelo Spotify e depende da disponibilidade e das condições do serviço para o visitante. A capa personalizada pertence à apresentação do site; o conteúdo interno do player continua sob controle do Spotify.
 
 Playlist: https://open.spotify.com/playlist/1cTilm7NeUkhR1FIsdrs3t
 
 Use `spotify.css` e `spotify.js` para ajustar essa página. A navegação da página inicial inclui Nosso Spotify.
+
+Os destaques incluem ondas decorativas animadas, sem logotipo, com controle de pausa e suporte a movimento reduzido. Os horários são marcações visuais dos trechos; não cortam nem avançam a reprodução automaticamente. Me Beija carrega o lançamento oficial de GMeyer (a faixa original aparece primeiro no player).
