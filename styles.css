@@ -29,3 +29,6 @@
 .message-swipe-hint{font-size:11px;color:var(--muted);margin-top:14px}.message-swipe-hint>span:first-child{display:inline-block;margin-right:8px}
 @media(max-width:600px){.message-stage{min-height:200px}.message-card{padding:24px 14px}.message-card p{font-size:clamp(25px,7vw,29px)}}
 @media(prefers-reduced-motion:reduce){.message-stage{scroll-behavior:auto}}
+
+/* Longer film quote, with comfortable line lengths on mobile. */
+.love-sentence.film-quote{font-size:clamp(32px,4.4vw,64px);line-height:1.2}
