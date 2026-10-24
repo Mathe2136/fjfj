@@ -13,6 +13,12 @@
   const localStatus = document.querySelector('#local-status');
   const excerptButton = document.querySelector('#play-excerpt');
   const fullButton = document.querySelector('#play-full');
+  const wavePlayer = document.querySelector('#wave-player');
+  const audioToggle = document.querySelector('#audio-toggle');
+  const audioSeek = document.querySelector('#audio-seek');
+  const progressBars = [...document.querySelectorAll('#progress-wave > span')];
+  const elapsed = document.querySelector('#audio-elapsed');
+  const durationLabel = document.querySelector('#audio-duration');
   let currentTrack;
   let mode = 'excerpt';
   let ready = false;
@@ -25,6 +31,44 @@
     const whole = Math.max(0, Math.floor(seconds));
     return `${Math.floor(whole / 60)}:${String(whole % 60).padStart(2, '0')}`;
   }
+
+  function syncProgress() {
+    const duration = ready && Number.isFinite(audio.duration) ? audio.duration : 0;
+    const time = duration ? Math.min(audio.currentTime, duration) : 0;
+    audioSeek.disabled = audioToggle.disabled = !ready;
+    audioSeek.max = String(duration || 1);
+    audioSeek.value = String(time);
+    audioSeek.setAttribute('aria-valuetext', `${timestamp(time)} de ${timestamp(duration)}`);
+    elapsed.textContent = timestamp(time);
+    durationLabel.textContent = timestamp(duration);
+    progressBars.forEach((bar, i) => bar.classList.toggle('is-past', duration > 0 && i / progressBars.length < time / duration));
+    audioToggle.setAttribute('data-playing', String(!audio.paused));
+    audioToggle.setAttribute('aria-label', audio.paused ? 'Reproduzir música' : 'Pausar música');
+  }
+
+  audioToggle.addEventListener('click', () => {
+    if (!ready) return;
+    if (!audio.paused) { audio.pause(); return; }
+    const attempt = audio.play();
+    if (attempt && attempt.catch) attempt.catch(() => {
+      localStatus.textContent = 'Não foi possível reproduzir. Toque em reproduzir para tentar novamente.';
+    });
+  });
+  audioSeek.addEventListener('input', () => {
+    if (!ready) return;
+    const target = Math.max(0, Math.min(Number(audioSeek.value), audio.duration));
+    if (!Number.isFinite(target)) return;
+    if (mode === 'excerpt' && (target < currentTrack.start || target >= currentTrack.end)) {
+      setMode('full');
+      localStatus.textContent = 'Música inteira selecionada. Você pode mudar o tempo livremente.';
+    }
+    seekTo(target);
+    syncProgress();
+  });
+  ['timeupdate', 'durationchange', 'seeked', 'play', 'pause', 'ended'].forEach(event => audio.addEventListener(event, syncProgress));
+  audio.addEventListener('playing', () => wavePlayer.classList.toggle('is-playing', true));
+  ['pause', 'waiting', 'seeking', 'ended', 'error', 'emptied'].forEach(event => audio.addEventListener(event, () => wavePlayer.classList.toggle('is-playing', false)));
+  audio.addEventListener('seeked', () => wavePlayer.classList.toggle('is-playing', !audio.paused && audio.readyState >= 3));
 
   function setMode(next) {
     mode = next;
@@ -80,6 +124,7 @@
       end: Number(button.dataset.end)
     };
     ready = false;
+    syncProgress();
     internalSeek = null;
     pendingSeek = currentTrack.start;
     setMode('excerpt');
@@ -106,7 +151,8 @@
     const target = pendingSeek === null ? currentTrack.start : pendingSeek;
     pendingSeek = null;
     seekTo(target);
-    localStatus.textContent = `Pronto em ${timestamp(target)}. Toque em reproduzir ou arraste a barra para mudar o tempo.`;
+    syncProgress();
+    localStatus.textContent = `Pronto em ${timestamp(target)}. Toque em reproduzir ou arraste nas ondas para mudar o tempo.`;
   });
 
   function playFrom(nextMode, time) {
@@ -116,7 +162,7 @@
     const version = selectionVersion;
     const attempt = audio.play();
     if (attempt && attempt.catch) attempt.catch(error => {
-      if (version === selectionVersion && error.name !== 'AbortError') localStatus.textContent = 'Toque no botão de reproduzir da barra para começar.';
+      if (version === selectionVersion && error.name !== 'AbortError') localStatus.textContent = 'Toque no botão de reproduzir para começar.';
     });
   }
   excerptButton.addEventListener('click', () => playFrom('excerpt', currentTrack.start));
@@ -125,7 +171,7 @@
     // Reload the embedded player to stop any previous Spotify audio before local playback.
     frame.src = frame.src;
     if (ready && !audio.seeking && mode === 'excerpt' && (audio.currentTime < currentTrack.start || audio.currentTime >= currentTrack.end - .05)) seekTo(currentTrack.start);
-    localStatus.textContent = mode === 'excerpt' ? `Nosso momento: ${timestamp(currentTrack.start)} a ${timestamp(currentTrack.end)}.` : 'Música inteira. Você pode avançar e voltar pela barra.';
+    localStatus.textContent = mode === 'excerpt' ? `Nosso momento: ${timestamp(currentTrack.start)} a ${timestamp(currentTrack.end)}.` : 'Música inteira. Você pode avançar e voltar pelas ondas.';
   });
   audio.addEventListener('playing', checkExcerptEnd);
   audio.addEventListener('timeupdate', checkExcerptEnd);
@@ -144,6 +190,7 @@
   });
   audio.addEventListener('error', () => {
     ready = false;
+    syncProgress();
     clearTimeout(endTimer);
     excerptButton.disabled = fullButton.disabled = true;
     localStatus.textContent = 'Não foi possível carregar o áudio. Tente escolher a música novamente ou use o Spotify abaixo.';
@@ -169,6 +216,7 @@
     waveToggle.setAttribute('aria-pressed', String(paused));
     waveToggle.textContent = paused ? 'Animar ondas' : 'Pausar ondas';
     trackList.classList.toggle('waves-paused', paused);
+    wavePlayer.classList.toggle('waves-paused', paused);
   });
   if (trackButtons.length) selectTrack(trackButtons[0], false);
 
