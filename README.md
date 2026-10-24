@@ -38,3 +38,8 @@ Os três arquivos enviados pelo autor estão em `assets/audio/`, em AAC/M4A com 
 ## Concha e mensagens
 
 A tampa da concha abre de 68° até 0° ao redor da dobradiça, sem ultrapassar 90° nem virar para dentro da base. A seção Que seja isso contém três telas com rolagem horizontal nativa, encaixe entre mensagens e indicador de posição. No celular, deslize para a esquerda para avançar e para a direita para voltar. Também há arrasto com mouse e navegação pelas setas, Home e End do teclado.
+
+
+## Nossa linha do tempo e áudio da MiMi
+
+A página inicial inclui quatro marcos sem ano presumido: 19/07 (primeiro oi), 14/08 (primeiras mensagens), 02/09 (entrega da pelúcia Nina) e 02/10 (pedido de namoro). Em Frases importantes para a MiMi, um botão reproduz e pausa `assets/audio/frases-mimi.m4a`, extraído do MP4 enviado pelo autor. Só a faixa de áudio é publicada, sem vídeo e sem reprodução automática. Os controles ficam em `quote-audio.js`.
