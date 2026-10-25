@@ -34,21 +34,7 @@
   }
 
   function studyMedia(alt = '') {
-    if (reducedMotion.matches) return image('assets/study/writing.png', alt);
-    const video = document.createElement('video');
-    video.autoplay = true;
-    video.muted = true;
-    video.loop = true;
-    video.playsInline = true;
-    video.preload = 'auto';
-    video.poster = 'assets/study/writing.png';
-    video.setAttribute('aria-label', alt);
-    const source = document.createElement('source');
-    source.src = 'assets/study/writing-arm.webm';
-    source.type = 'video/webm';
-    video.append(source);
-    video.addEventListener('error', () => video.replaceWith(image('assets/study/writing.png', alt)), { once: true });
-    return video;
+    return image(reducedMotion.matches ? 'assets/study/writing.png' : 'assets/study/writing-arm-clean.webp', alt);
   }
 
   function replaceMedia(target, active, alt = '') {
@@ -74,7 +60,7 @@
     const date = active && value.startedAt ? new Date(value.startedAt) : null;
     if (date && Number.isFinite(date.getTime())) {
       start.dateTime = date.toISOString();
-      start.textContent = new Intl.DateTimeFormat('pt-BR', { hour: '2-digit', minute: '2-digit', timeZone: 'America/Sao_Paulo' }).format(date) + ' (Brasília)';
+      start.textContent = new Intl.DateTimeFormat('pt-BR', { hour: '2-digit', minute: '2-digit', timeZone: 'America/Sao_Paulo' }).format(date);
       time.hidden = false;
     }
     details.hidden = !active;
