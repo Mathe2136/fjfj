@@ -34,7 +34,21 @@
   }
 
   function studyMedia(alt = '') {
-    return image(reducedMotion.matches ? 'assets/study/writing.png' : 'assets/study/writing-arm-clean.webp', alt);
+    if (reducedMotion.matches) return image('assets/study/writing.png', alt);
+    const video = document.createElement('video');
+    video.autoplay = true;
+    video.muted = true;
+    video.loop = true;
+    video.playsInline = true;
+    video.preload = 'auto';
+    video.poster = 'assets/study/writing.png';
+    video.setAttribute('aria-label', alt);
+    const source = document.createElement('source');
+    source.src = 'assets/study/writing-arm.webm?v=study-6';
+    source.type = 'video/webm';
+    video.append(source);
+    video.addEventListener('error', () => video.replaceWith(image('assets/study/writing.png', alt)), { once: true });
+    return video;
   }
 
   function replaceMedia(target, active, alt = '') {
